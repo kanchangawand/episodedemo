@@ -1,0 +1,27 @@
+<div *ngIf="!episodeFlag">
+    <section class="section mt-3" *ngFor="let episode of showData" style="border-style: solid;padding: 5px;">
+            <div class="container">
+                <div class="row">
+                <div class="col-md-6">
+                    <div>
+                    <img alt="Web Studio" class="img-fluid" src="{{episode['image']['medium']}}" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5 ml-auto d-flex align-items-center mt-4 mt-md-0">
+                    <div>
+                    Season: <h5>{{episode.season}}</h5>
+                    Name :<h5>{{episode.name}}</h5>
+                    <a (click) = "episodeDetails(episode)" style="cursor: pointer;">  Episode :<h5>{{episode.number}}</h5></a>
+                    </div>
+                </div>
+                </div>
+            </div>
+    </section>
+</div>
+
+<div *ngIf="episodeFlag">
+    <app-episodesdetails [episode] = "episodeData"></app-episodesdetails>
+</div>
+
+      
+ 
